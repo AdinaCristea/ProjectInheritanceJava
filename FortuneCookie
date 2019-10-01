@@ -1,0 +1,60 @@
+package Surprise;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+
+public class FortuneCookie implements ISurprise {
+
+
+    private static ArrayList<FortuneCookie> quotes = new ArrayList<>();
+    private String mesaj;
+
+    //Constructor
+    public FortuneCookie(String mesaj) {
+        this.mesaj = mesaj;
+    }
+
+    // Implementarea metodei din ISurprise
+    public void enjoy() {
+        System.out.println("Mesajul din Fortune cookie este: " + mesaj);
+    }
+
+    //Creare obiecte
+
+    static {
+        quotes.add(new FortuneCookie("Those who realize their folly are not true fools."));
+        quotes.add(new FortuneCookie("Change your thoughts and you change your world."));
+        quotes.add(new FortuneCookie("Life is too important to be taken seriously."));
+        quotes.add(new FortuneCookie("Life can only be understood backwards; but it must be lived forwards."));
+        quotes.add(new FortuneCookie(" It always seems impossible until it’s done."));
+        quotes.add(new FortuneCookie(" Keep your eyes on the stars and your feet on the ground."));
+        quotes.add(new FortuneCookie(" It’s better to be a lion for a day than a sheep all your life."));
+        quotes.add(new FortuneCookie(" Keep looking up… that’s the secret of life. "));
+        quotes.add(new FortuneCookie("I don’t want to earn my living; I want to live."));
+        quotes.add(new FortuneCookie(" Life is a one time offer, use it well."));
+
+        quotes.add(new FortuneCookie(" The trouble is you think you have time."));
+        quotes.add(new FortuneCookie(" Be the change you wish to see in the world."));
+        quotes.add(new FortuneCookie(" This is your life, and it’s ending one minute at a time."));
+        quotes.add(new FortuneCookie(" A man is not old until his regrets take the place of his dreams."));
+        quotes.add(new FortuneCookie(" Try and fail, but never fail to try."));
+        quotes.add(new FortuneCookie(" Life is wasted on the living."));
+        quotes.add(new FortuneCookie(" Enjoy life. There’s plenty of time to be dead."));
+        quotes.add(new FortuneCookie(" A man is not old until his regrets take the place of his"));
+        quotes.add(new FortuneCookie(" Die with memories, not dreams"));
+        quotes.add(new FortuneCookie(" Everything you can imagine is real."));
+    }
+
+    //metoda statica
+    public static FortuneCookie generate() {
+        new FortuneCookie(""); // aici nu am stiut cum sa fac sa creez o metoda cu un mesaj din quotes;
+                                        // """ va fi afisat inainte de mesajul alocat.
+        Random random = new Random();
+        int n = random.nextInt(quotes.size());
+        return quotes.get(n);
+
+    }
+}
+
+
